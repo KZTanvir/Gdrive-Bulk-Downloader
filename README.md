@@ -11,6 +11,9 @@ The **Gdrive Bulk Downloader** is a Python-based tool designed for efficient and
 - User authentication and access control.
 - Modular structure with reusable functions.
 - Customizable and easy to integrate with other projects.
+- **Multiple Google Account Support**: Easily switch between accounts.
+- **Portable Tokens**: Supports saving and transferring account tokens for use across devices.
+- **Root Directory Browser**: Allows browsing the main root directory of Google Drive.
 
 ## Requirements
 - Python 3.7 or higher
@@ -48,25 +51,32 @@ python main.py
    - Downloads a single file from Google Drive based on a provided link.
 5. **Bulk Download Links**
    - Processes multiple links entered earlier and downloads their corresponding files/folders.
-6. **About**
+6. **Switch Accounts**
+   - Swap between multiple Google accounts with ease.
+7. **Browse Root Directory**
+   - Allows the user to view and navigate the main root directory of their Google Drive.
+8. **About**
    - Displays information about the tool.
 
 ## Code Structure
 - **`main.py`**: The entry point of the program, managing the main loop and user interactions.
-- **`UserControl.py`**: Handles user authentication and token management.
+- **`UserControl.py`**: Handles user authentication, token management, and account switching. Handles multiple accounts and portable token functionality.
 - **`DriveLoader/`**:
   - `Drive_Browser.py`: Contains functionality for browsing Google Drive.
   - `Gdrive_Downloader.py`: Implements downloading of files and folders.
   - `Client_Credentials.py`: Manages API credentials.
-
 ## Example Workflow
 1. **Specify a download folder:** Input a folder name to save files.
 2. **Enter multiple links:** Paste Google Drive links into the program.
 3. **Download:** Select from menu options to download files or folders individually or in bulk.
+4. **Switch accounts:** Easily authenticate and switch between different Google accounts.
+5. **Browse root directory:** View and navigate the contents of your main root directory.
 
 ## Error Handling
 - Invalid links: Prompts the user to re-enter valid links.
 - Authentication errors: Displays clear messages and guides users to re-authenticate.
+- Account switching errors: Ensures smooth transitions between accounts.
+- Directory navigation errors: Handles invalid paths or access issues gracefully.
 
 ## Contribution
 Contributions are welcome! To contribute:
@@ -97,6 +107,8 @@ Gdrive-Bulk-Downloader/
 │   ├── Drive_Browser.py
 │   ├── Gdrive_Downloader.py
 │   ├── Gdrive_Uploader.py
+│   ├── Account_Manager.py
+│   ├── Root_Directory_Browser.py
 └── functions.py
 ```
 
